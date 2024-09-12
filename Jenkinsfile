@@ -9,8 +9,6 @@ pipeline
         AWS_REGION = 'ap-south-1'
         CSV_NAME = 'color_srgb.csv'
         BUCKET_NAME = 'csv-bucket-jenkins-unique-66'
-        AWS_REGION = 'ap-south-1'
-
     }
     stages
     {
