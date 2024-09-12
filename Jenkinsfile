@@ -47,7 +47,7 @@ pipeline
             {
             script {
                 sh 'aws --version'
-                sh "aws s3 cp CSV_NAME s3://${BUCKET_NAME}/color_srgb.csv --region ${AWS_REGION}"
+                sh "aws s3 cp ${CSV_NAME} s3://${BUCKET_NAME}/color_srgb.csv --region ${AWS_REGION}"
                 }
  
             }
