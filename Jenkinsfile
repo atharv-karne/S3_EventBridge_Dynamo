@@ -32,8 +32,10 @@ pipeline
             {
                 script
                 {
-                    sh 'terraform plan'
-                    sh 'terraform apply -auto-approve'
+                    sh 'terrafom destroy'
+                    // sh 'terraform plan'
+                    // sh 'terraform apply -auto-approve'
+                    
                 }
             }
 
