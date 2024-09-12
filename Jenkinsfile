@@ -16,6 +16,8 @@ pipeline
     {
         stage('Terraform init')
         {
+            steps
+            {
             withCredentials([aws(credentialsId: TERRAFORM_CREDENTIALS_ID, region: AWS_REGION)])
             {
                 script
@@ -24,8 +26,10 @@ pipeline
                 }
             }
         }
+        }
         stage('Terraform apply')
         {
+            steps{
             withCredentials([aws(credentialsId: TERRAFORM_CREDENTIALS_ID, region: AWS_REGION)])
             {
                 script
@@ -36,8 +40,11 @@ pipeline
             }
 
         }
+        }
         stage('Upload csv')
         {
+            steps
+            {
             withCredentials([aws(credentialsId: TERRAFORM_CREDENTIALS_ID, region: AWS_REGION)])
             {
             script {
@@ -46,7 +53,7 @@ pipeline
                 }
  
             }
-
+            }
         }
     }
 
