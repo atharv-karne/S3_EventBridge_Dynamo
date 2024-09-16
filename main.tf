@@ -64,19 +64,19 @@ resource "aws_iam_policy" "lambda_policy" {
       {
         "Effect" : "Allow",
         "Action" : [
-          # "logs:CreateLogGroup",
-          # "logs:CreateLogStream",
-          # "logs:PutLogEvents",
-          "logs:*"
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+          # "logs:*"
         ],
         "Resource" : "*"
       },
       {
         "Effect" : "Allow",
         "Action" : [
-          # "s3:GetObject",
-          # "s3:ListBucket",
-          "s3:*"
+          "s3:GetObject",
+          "s3:ListBucket",
+          # "s3:*"
         ],
         "Resource" : [
           "${aws_s3_bucket.csv_bucket.arn}/*",
