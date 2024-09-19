@@ -24,7 +24,7 @@ def lambda_handler(event, context):
         # Write to DynamoDB
         table = dynamodb.Table('colors')
         for row in csv_reader:
-            # Clean up column names by removing BOM if it exists
+            # Clean up column names by removing BOM if it exists ...
             cleaned_row = {key.lstrip('\ufeff'): value for key, value in row.items()}
             
             # Debugging: Log the cleaned row
